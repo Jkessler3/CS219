@@ -1,0 +1,51 @@
+# Project Title
+
+CS219 Programming Project 2
+
+## Description
+
+This program takes in a text file containing assembly style commands and computes them. An output will be be displayed in the terminal window.
+
+The following commands can be included in the text that loads into the program as shown below.
+
+```
+Operation Operand1 Operand2
+```
+
+ADD - Takes in two operands and adds them together
+AND - Takes in two operands and does a bitwise AND
+ASR = Takes in an operand and a shift value. Does arithmetic shifting right
+LSR - Takes in an operand and a shift value. Does a logical shift right
+LSL - Takes in an operand and a shift value. Does a logical shift left
+NOT - Takes in an operand and inverts the value.
+ORR - Takes in two operands and does a bitwise OR
+SUB - Takes in two operands and subtracts them 
+XOR - Takes in two operands and does a bitwise XOR
+
+Adding S to the end of a command will cause the Z and N flags to be set.
+
+The Z flag denotes a result is zero and a N flag denotes that it is negative.
+
+### Executing program
+
+In order to load a new file change the name for the following code found on line 23.
+
+```
+ //OPEN FILE
+    std::ifstream file("Programming-Project-2.txt"); //opens the file
+```
+
+Make sure the file is in the same folder as the project.
+
+Next, use the make command and then run main.o.
+
+## Authors
+
+Contributors names
+
+Jon Kessler  
+
+## Version History
+
+* 0.1
+    * Initial Release
