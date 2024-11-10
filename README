@@ -1,6 +1,6 @@
 # Project Title
 
-CS219 Programming Project 2
+CS219 Programming Project 3
 
 ## Description
 
@@ -12,32 +12,47 @@ The following commands can be included in the text that loads into the program a
 Operation Operand1 Operand2
 ```
 
-ADD - Takes in two operands and adds them together
-AND - Takes in two operands and does a bitwise AND
-ASR = Takes in an operand and a shift value. Does arithmetic shifting right
-LSR - Takes in an operand and a shift value. Does a logical shift right
-LSL - Takes in an operand and a shift value. Does a logical shift left
-NOT - Takes in an operand and inverts the value.
-ORR - Takes in two operands and does a bitwise OR
-SUB - Takes in two operands and subtracts them 
-XOR - Takes in two operands and does a bitwise XOR
+ADD - Takes in three operands store and adds the last two together. Stores them in the first operand.
+AND - Takes in three operands and does a bitwise AND of the last two. Stores them in the first operand. 
+ASR = Takes in two operand and a shift value of the last operand. Does arithmetic shifting right. Stores them in the first operand.
+LSR - Takes in two operand and a shift value of the last operand. Does a logical shift right. Stores them in the first operand.
+LSL - Takes in two operand and a shift value of the last operand. Does a logical shift left. Stores them in the first operand.
+NOT - Takes in two operand and inverts the value of the last operand. Stores them in the first operand.
+ORR - Takes in three operands and does a bitwise OR of the last two operands. Stores them in the first operand.
+SUB - Takes in three operands and subtracts the 3rd operand from the 2nd. Stores them in the first operand.
+XOR - Takes in three operands and does a bitwise XOR of the last two operands. Stores them in the first operand.
+MOV - Takes in two operands and store the into the first operand the value of the second operand 
+CMP - Takes in two operands and does a AND comparison. Then updates NZCV flags. Does not store data.
+TST - Takes in two operands and does SUB comparison. Then updates NZCV flags. Does not store data.
 
-Adding S to the end of a command will cause the Z and N flags to be set.
+Adding S to the end of a command will cause the NZCV flags to be set.
 
 The Z flag denotes a result is zero and a N flag denotes that it is negative.
+The C flag denotes a carry over result. The V flag denotes an overflow result.
 
 ### Executing program
 
-In order to load a new file change the name for the following code found on line 23.
+In order to load a new file change the definition of FILE_NAME in the header.
 
 ```
- //OPEN FILE
-    std::ifstream file("Programming-Project-2.txt"); //opens the file
+#define FILE_NAME "Programming-Project-Flags.txt" //Change this to the test file
+
 ```
 
 Make sure the file is in the same folder as the project.
 
-Next, use the make command and then run main.o.
+Next, use the make command and then run ./hw3
+
+After the file is run an output with display the command run, the result, the registers current state, and the flags.
+
+Example:
+
+```
+MOV     R1, #0X72DF9901 : 0x72DF9901
+R0: 0x0 R1: 0x72DF9901  R2: 0x0 R3: 0x0 R4: 0x0 R5: 0x0 R6: 0x0 R7: 0x0
+N: 0 Z: 0 C: 0 V: 0
+```
+
 
 ## Authors
 

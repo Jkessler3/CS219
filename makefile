@@ -1,8 +1,8 @@
-hw1: main.o 
-	g++ main.o -o hw1
+hw3: main.o 
+	g++ main.o -o hw3
 
-main.o: main.cpp registers.cpp
+main.o: main.cpp
 	g++ -c main.cpp
 	
 clean:
-	rm *.o hw1
+	rm *.o hw3
